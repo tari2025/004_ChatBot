@@ -73,4 +73,30 @@ app.post("/api/chat", async (req, res) => {
                     continue;
                 }
 
-                
+                if (!trimmedLine.startsWith("data: ")) {
+                    continue;
+                }
+
+                const data = trimmedLine.slice(5).trim();
+
+                if (data === "[DONE]") {
+                    continue;
+                }
+
+                try {
+                    const json = JSON.parse(data);
+                    const content = json.choices[0].delta.content;
+
+                    if (content) {
+                        res.write(`data: ${JSON.stringify({ content })}\n\n`);
+                    }
+                } catch (error) {
+                    console.error("Gagal parsing Streaming Data", error);
+                }
+            }
+        }
+
+        res.write("data: [DONE]\n\n");
+        res.end();
+
+    
