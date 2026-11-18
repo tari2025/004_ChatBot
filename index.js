@@ -99,4 +99,18 @@ app.post("/api/chat", async (req, res) => {
         res.write("data: [DONE]\n\n");
         res.end();
 
-    
+    } catch (error) {
+        console.error("Server Error:", error);
+
+        if (!res.headersSent) {
+            res.status(500).json({ error: "Terjadi kesalahan pada server" });
+        } else {
+            res.write(`data: ${JSON.stringify({ error: "Terjadi kesalahan pada server" })}\n\n`);
+            res.end();
+        }
+    }
+});
+
+app.listen(port, () => {
+    console.log(`Server berjalan di http://localhost:${port}`);
+});
