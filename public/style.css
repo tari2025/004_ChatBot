@@ -1,0 +1,126 @@
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fce4ec; /* Warna latar belakang pink muda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Utama Chat */
+.chat-container {
+    width: 400px;
+    height: 600px;
+    background-color: #ffffff; /* Putih */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid #f8bbd0; /* Border pink tipis */
+}
+
+/* Header Chat */
+.chat-header {
+    background-color: #2196f3; /* Biru */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.chat-header h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.chat-header p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Area Pesan */
+.chat-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+}
+
+/* Gaya Bubble Pesan */
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Pesan Bot (Kiri) */
+.bot-message {
+    background-color: #fce4ec; /* Latar pink muda */
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+    border: 1px solid #f8bbd0;
+}
+
+/* Pesan User (Kanan) */
+.user-message {
+    background-color: #2196f3; /* Biru */
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+/* Area Input */
+.chat-footer {
+    padding: 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+#chatForm {
+    display: flex;
+    gap: 10px;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+#messageInput:focus {
+    border-color: #2196f3; /* Fokus input berubah biru */
+}
+
+#sendButton {
+    background-color: #2196f3; /* Biru */
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#sendButton:hover {
+    background-color: #e91e63; /* Berubah pink saat di-hover */
+}
