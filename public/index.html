@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot AI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="chat-container">
+      <!-- Header Chat -->
+      <div class="chat-header">
+        <h2>Chatbot AI</h2>
+        <p>AVATAR: Master 3.5 Turbo</p>
+      </div>
+
+      <!-- Area Pesan -->
+      <div class="chat-body" id="chatBox">
+        <!-- Pesan dari Bot -->
+        <div class="message bot-message">
+          <p>Halo! Ada yang bisa saya bantu?</p>
+        </div>
+        <!-- Pesan dari User akan muncul di sini -->
+      </div>
+
+      <!-- Area Input -->
+      <div class="chat-footer">
+        <form id="chatForm">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Ketik pesan..."
+            autocomplete="off"
+          />
+          <button type="submit" id="sendButton">Kirim</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
